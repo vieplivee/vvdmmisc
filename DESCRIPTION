@@ -1,0 +1,10 @@
+Package: vvdmmisc
+Type: Package
+Title: vv data mining miscellaneous
+Version: 0.1
+Date: 2015-07-08
+Author: vieplivee
+Maintainer: vieplivee
+Description: a few functions for my personal use
+License: 
+LazyData: TRUE
