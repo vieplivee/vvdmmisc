@@ -4,7 +4,8 @@ Title: vv data mining miscellaneous
 Version: 0.1
 Date: 2015-07-08
 Author: vieplivee
-Maintainer: vieplivee
+Maintainer: Ji Li <vieplivee@gmail.com>
 Description: a few functions for my personal use
-License: 
+License: GLP (>= 2)
 LazyData: TRUE
+URL: https://github.com/vieplivee/vvdmmisc
