@@ -30,9 +30,17 @@ library(vvdmmisc)
 
 ## Functions
 
-- splitdf: ```?splitdf```
-- removefactors: ```?removefactors```
-- plotcormatrix: ```?plotcormatrix```
+###### splitdf
+
+```?splitdf```
+
+###### removefactors
+
+```?removefactors```
+
+###### plotcormatrix
+
+```?plotcormatrix```
 
 ----
 
