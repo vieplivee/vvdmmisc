@@ -7,13 +7,13 @@
 removefactors(dataframe, nlevels = 50)
 }
 \arguments{
-\item{dataframe}{}
+\item{dataframe}{a data frame}
 
-\item{nlevels}{- number of max levels of factor columns allowed}
+\item{nlevels}{an integer - number of max levels of factor columns allowed}
 }
 \value{
-dataframe whose factor columns with either > nlevels of levels or one
-  level are removed
+a data frame whose factor columns with either > nlevels
+of levels or one level are removed
 }
 \description{
 remove factors from a data frame

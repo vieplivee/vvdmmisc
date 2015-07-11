@@ -7,15 +7,15 @@
 splitdf(dataframe, seed = 10001, ratio = 2)
 }
 \arguments{
-\item{dataframe}{}
+\item{dataframe}{a data frame}
 
-\item{seed}{(optional) - seeding the split. default = 10001}
+\item{seed}{(optional) an integer - seeding the split. default = 10001}
 
-\item{ratio}{(optional) - 1/ratio of total set is designated to training.
+\item{ratio}{(optional) an integer - 1/ratio of total set is designated to training.
 default = 2}
 }
 \value{
-list - a trainset and a testset
+a list of a trainset and a testset
 }
 \description{
 split a data frame into training and testing sets

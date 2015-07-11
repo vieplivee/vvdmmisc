@@ -9,3 +9,4 @@ Description: a few functions for my personal use
 License: GLP (>= 2)
 LazyData: TRUE
 URL: https://github.com/vieplivee/vvdmmisc
+Suggests: testthat
