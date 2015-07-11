@@ -1,4 +1,12 @@
-plotcormatrix <- function(data, roundn = 2, type = "lower", corfix = FALSE) {
+#' plot correlation matrix
+#'
+#' @param dataframe
+#' @param roundn (optional) - an integer number of decimal places to round correlation coefficients, default = 2
+#' @param type (optional) - 'lower' (default) for lower triangular matrix, 'upper' for upper triangular matrix, and 'full' for full matrix
+#' @param corfix (optiona) - 'FALSE' (default) for natural output, 'TRUE' for square output
+#' @return correlation matrix
+#'
+plotcormatrix <- function(dataframe, roundn = 2, type = "lower", corfix = FALSE) {
     
     ###### variables ######
     
@@ -32,29 +40,28 @@ plotcormatrix <- function(data, roundn = 2, type = "lower", corfix = FALSE) {
     
     ###### main ######
     
-    data <- data[sapply(data, is.numeric)]
-    sdall <- sapply(data, sd)
+    dataframe <- dataframe[sapply(dataframe, is.numeric)]
+    sdall <- sapply(dataframe, sd)
     sdall <- sdall[sdall == 0]
-    data <- data[, -which(names(data) %in% names(sdall))]
+    dataframe <- dataframe[, -which(names(dataframe) %in% names(sdall))]
     
-    cor.data <- round(cor(data), roundn)
+    cor.dataframe <- round(cor(dataframe), roundn)
     
     if (type == "upper") {
-        cor.data <- get_upper_tri(cor.data)
+        cor.dataframe <- get_upper_tri(cor.dataframe)
     } else if (type == "full") {
-        cor.data <- cor.data
+        cor.dataframe <- cor.dataframe
     } else {
-        cor.data <- get_lower_tri(cor.data)
+        cor.dataframe <- get_lower_tri(cor.dataframe)
     }
     
-    for (i in 1:nrow(cor.data)) {
-        cor.data[i, i] = NaN
+    for (i in 1:nrow(cor.dataframe)) {
+        cor.dataframe[i, i] = NaN
     }
     
-    p <- ggplot(data = melt(cor.data), aes(x = Var1, y = Var2, fill = value)) + geom_tile(color = "white") + 
-        scale_fill_gradient2(low = "red", high = "green", mid = "white", midpoint = 0, 
-            limit = c(-1, 1), name = "Pearson\nCorrelation") + theme_minimal() + theme(axis.text.x = element_text(angle = 45, 
-        vjust = 1, size = 12, hjust = 1))
+    p <- ggplot(dataframe = melt(cor.dataframe), aes(x = Var1, y = Var2, fill = value)) + geom_tile(color = "white") + 
+        scale_fill_gradient2(low = "red", high = "green", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Pearson\nCorrelation") + 
+        theme_minimal() + theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1))
     
     if (corfix == TRUE) {
         p <- p + coord_fixed()

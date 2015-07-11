@@ -28,4 +28,4 @@ removefactors <- function(dataframe, nlevels = 50) {
         }
     }
     return(dataframe)
-}
+} 

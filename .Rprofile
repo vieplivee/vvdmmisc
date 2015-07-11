@@ -4,5 +4,4 @@ source("packrat/init.R")
 
 library(devtools)
 library(ggplot2)
-library(reshape2)
 library(stats)
