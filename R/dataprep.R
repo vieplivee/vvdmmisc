@@ -1,9 +1,10 @@
 #' split a data frame into training and testing sets
 #'
 #' @param dataframe
-#' @param seed (optional) - seeding the split
-#' @param ratio (optional) - 1/ratio of total set is designated to training
-#' @return a list - trainset and testset
+#' @param seed (optional) - seeding the split. default = 10001
+#' @param ratio (optional) - 1/ratio of total set is designated to training.
+#'   default = 2
+#' @return list - a trainset and a testset
 
 splitdf <- function(dataframe, seed = 10001, ratio = 2) {
     index <- 1:nrow(dataframe)
@@ -28,4 +29,4 @@ removefactors <- function(dataframe, nlevels = 50) {
         }
     }
     return(dataframe)
-} 
+}

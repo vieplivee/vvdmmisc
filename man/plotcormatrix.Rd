@@ -9,16 +9,28 @@ plotcormatrix(dataframe, roundn = 2, type = "lower", corfix = FALSE)
 \arguments{
 \item{dataframe}{}
 
-\item{roundn}{(optional) - an integer number of decimal places to round correlation coefficients, default = 2}
+\item{roundn}{(optional) - an integer number of decimal places to round
+correlation coefficients, default = 2}
 
-\item{type}{(optional) - 'lower' (default) for lower triangular matrix, 'upper' for upper triangular matrix, and 'full' for full matrix}
+\item{type}{(optional) - 'lower' (default) for lower triangular matrix,
+'upper' for upper triangular matrix, and 'full' for full matrix}
 
-\item{corfix}{(optiona) - 'FALSE' (default) for natural output, 'TRUE' for square output}
+\item{corfix}{(optiona) - 'FALSE' (default) for natural output, 'TRUE' for
+square output}
 }
 \value{
-correlation matrix
+a plot of correlation matrix
 }
 \description{
 plot correlation matrix
+}
+\examples{
+d <- data.frame(x = 2:11, y = 1:10, z=3:12)
+plotcormatrix(d)
+
+Need to have at least three valid numeric columns - otherwise you'll get
+  an error, like in the following
+d <- data.frame(x = 2:11, y = 1:10)
+plotcormatrix(d)
 }
 
