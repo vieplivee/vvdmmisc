@@ -79,6 +79,7 @@ plotcormatrix <- function(
             limit = c(-1, 1),
             name = "Pearson\nCorrelation"
         ) +
+        geom_text(aes(label = value)) +
         theme_minimal() +
         theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1))
 
